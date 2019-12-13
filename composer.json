@@ -1,0 +1,16 @@
+{
+  "name": "do-community/dolphin",
+  "description": "Manage DigitalOcean Droplets",
+  "license": "MIT",
+  "homepage": "https://github.com/do-community/dolphin",
+  "keywords": ["cli","command-line"],
+
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "require": {
+    "minicli/minicli": "^1.0"
+  }
+}
