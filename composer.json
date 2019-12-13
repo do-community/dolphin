@@ -1,6 +1,7 @@
 {
   "name": "do-community/dolphin",
   "description": "Manage DigitalOcean Droplets",
+  "type": "project",
   "license": "MIT",
   "homepage": "https://github.com/do-community/dolphin",
   "keywords": ["cli","command-line"],
@@ -12,5 +13,10 @@
   },
   "require": {
     "minicli/minicli": "^1.0"
+  },
+  "scripts": {
+    "post-update-cmd": [
+      "@php -r \"file_exists('config.php') || copy('config_sample.php', 'config.php');\""
+    ]
   }
 }
