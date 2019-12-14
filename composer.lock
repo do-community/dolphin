@@ -7,39 +7,6 @@
     "content-hash": "a837d012a53b0ea99eda38212dff9d30",
     "packages": [
         {
-            "name": "erikaheidi/minicli",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/erikaheidi/minicli.git",
-                "reference": "69d93beb8041d9233c6a57839ad178562e607711"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/erikaheidi/minicli/zipball/69d93beb8041d9233c6a57839ad178562e607711",
-                "reference": "69d93beb8041d9233c6a57839ad178562e607711",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Minicli\\": "lib/",
-                    "App\\": "app/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Dependency-free CLI AppKit",
-            "homepage": "https://github.com/erikaheidi/minicli",
-            "keywords": [
-                "cli",
-                "command-line"
-            ],
-            "time": "2019-12-12T21:05:40+00:00"
-        },
-        {
             "name": "minicli/minicli",
             "version": "1.0.3",
             "source": {
