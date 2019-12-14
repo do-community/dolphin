@@ -19,7 +19,7 @@
 
 # Dolphin
 
-Dolphin is a PHP-based command line tool for managing DigitalOcean servers.
+Dolphin is a PHP-based command line tool for managing DigitalOcean servers. It includes a `playbooks` submodule that pulls from our [community playbooks](https://github.com/do-community/ansible-playbooks) repository, and a handy dynamic Ansible inventory script that you can use to run playbooks on new DO servers.
 
 ## Requirements
 
@@ -48,6 +48,12 @@ Run `composer install` to install Dolphin's only dependency ([minicli](https://g
 
 ```
 composer install
+```
+
+To fetch the playbooks submodule contents (which is optional), you should run:
+
+```
+git submodule update --init --recursive
 ```
 
 ## Usage
