@@ -276,7 +276,19 @@ ID        NAME      FINGERPRINT
 23937789  heidislab e7:51:a3:7e:e1:11:1b:d1:69:8e:98:3d:45:5f:7f:14
 ```
 
+## Running Ansible Playbooks and Commands
 
+The included `hosts.php` script works as a dynamic inventory script that can be used directly with Ansible commands.
+
+```
+ansible all -m ping -i hosts.php -u root
+```
+
+```
+ansible-playbook -l server-name -i hosts.php playbooks/setup_ubuntu1804/playbook.yml -u root
+```
+
+Please check the [community playbooks](https://github.com/do-community/ansible-playbooks) repository for more details and links to guides that explain how to use the playbooks included in the `playbooks` submodule.
 ## Tips & Tricks
 
 ### Manipulating Cache
@@ -295,14 +307,4 @@ If instead you'd like to enforce cache usage and not query for new results even 
 dolphin droplet list --force-cache
 ```
 
-## Using the Dynamic Inventory Script with Ansible
 
-If you'd like to use the dynamic inventory feature of Dolphin while running native Ansible commands and playbooks, you can use the included `hosts.php` dynamic inventory script, and you can also generate a static inventory file using the `dolphin inventory` command.
-
-### Using the included Dynamic Inventory Script
-
-The included `hosts.php` script works as a dynamic inventory script that can be used directly with Ansible commands.
-
-```
-ansible all -m ping -i hosts.php
-```
