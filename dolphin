@@ -15,8 +15,6 @@ $app = new App(require __DIR__ . '/config.php');
 $cache = new FileCache(__DIR__ . '/var/cache');
 
 $signature = <<<EOD
-./dolphin help
-
          ,gggggggggggg,
         dP"""88""""""Y8b,               ,dPYb,             ,dPYb,
         Yb,  88       `8b,              IP'`Yb             IP'`Yb
@@ -33,6 +31,7 @@ $signature = <<<EOD
                                                I8
                                                I8
                                                I8
+usage: ./dolphin help
 EOD;
 
 $app->setSignature($signature);

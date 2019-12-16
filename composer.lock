@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "minicli/minicli",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/minicli/minicli.git",
-                "reference": "7e43be4f0684285b902f57e5732e8097cd0b3842"
+                "reference": "5e5d35519d131a9eeef0b6d7d41b4127443c8a64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/minicli/minicli/zipball/7e43be4f0684285b902f57e5732e8097cd0b3842",
-                "reference": "7e43be4f0684285b902f57e5732e8097cd0b3842",
+                "url": "https://api.github.com/repos/minicli/minicli/zipball/5e5d35519d131a9eeef0b6d7d41b4127443c8a64",
+                "reference": "5e5d35519d131a9eeef0b6d7d41b4127443c8a64",
                 "shasum": ""
             },
             "type": "library",
@@ -36,7 +36,7 @@
                 "cli",
                 "command-line"
             ],
-            "time": "2019-12-13T15:48:43+00:00"
+            "time": "2019-12-16T14:30:36+00:00"
         }
     ],
     "packages-dev": [],
