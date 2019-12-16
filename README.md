@@ -33,26 +33,26 @@ Dolphin is a PHP-based command line tool for managing DigitalOcean servers. It i
 ### Via Git
 First, clone this repository with:
 
-```
+```sh
 git clone https://github.com/do-community/dolphin.git
 ```
 
 Now go to Dolphin's directory and set the permissions for the executable:
 
-```
+```sh
 cd dolphin
 chmod +x dolphin
 ```
 
 Run `composer install` to install Dolphin's only dependency ([minicli](https://github.com/minicli/minicli)) and set up autoload:
 
-```
+```sh
 composer install
 ```
 
 To fetch the playbooks submodule contents (which is optional), you should run:
 
-```
+```sh
 git submodule update --init --recursive
 ```
 
@@ -60,7 +60,7 @@ git submodule update --init --recursive
 
 A `config.php` file is created upon installation with Composer. Edit the contents of this file and adjust the values accordingly:
 
-```
+```php
 <?php
 
 return [
@@ -119,7 +119,7 @@ return [
 
 Now you can execute Dolphin with:
 
-```
+```sh
 ./dolphin [command] [sub-command] [params]
 ```
 
@@ -129,7 +129,7 @@ For an overall look of commands and sub-commands, run `./dolphin help`.
 
 If you'd like to use dolphin out of any directory in a global installation, you can do so by creating a symbolic link to the dolphin executable on `/usr/local/bin`. Please notice this will only work for your current user, who owns the `dolphin` directory.
 
-```
+```sh
 sudo ln -s /usr/local/bin/dolphin /home/erika/Projects/dolphin/dolphin
 ```
 
