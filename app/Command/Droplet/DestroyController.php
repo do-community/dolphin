@@ -16,13 +16,18 @@ class DestroyController extends CommandController
 
         $droplet_id = $this->getParam('id');
 
-        /** @var DigitalOcean $digitalocean */
-        $digitalocean = $this->getApp()->digitalocean;
+        $multiple = explode(',', $droplet_id);
 
-        $this->getPrinter()->info(sprintf("Destroying Droplet ID %s ...", $droplet_id));
+        foreach ($multiple as $id) {
+            /** @var DigitalOcean $digitalocean */
+            $digitalocean = $this->getApp()->digitalocean;
 
-        if ($digitalocean->destroyDroplet($droplet_id)) {
-            $this->getPrinter()->success("Droplet successfully destroyed.\n\n");
+            $id = trim($id);
+            $this->getPrinter()->info(sprintf("Destroying Droplet ID %s ...", $id));
+
+            if ($digitalocean->destroyDroplet($id)) {
+                $this->getPrinter()->success("Droplet successfully destroyed.\n\n");
+            }
         }
     }
 }

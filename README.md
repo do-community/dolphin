@@ -141,7 +141,7 @@ ID        NAME                        IP              REGION    SIZE
 ### Getting Information About a Droplet
 
 ```
-dolphin droplet info DROPLET_ID
+dolphin droplet info id=DROPLET_ID
 ```
 
 The output will be a JSON will all the available information about that droplet.
@@ -170,7 +170,7 @@ id        name       region    size         image             created at
 ```
 
 
-It will take a few moments before the network is ready and you're able to SSH or run `droplet deployer` on that server. To get the IP address, run this command after a few seconds:
+It will take a few moments before the network is ready and you're able to SSH or run `ansible` on that server. To get the IP address, run this command after a few seconds:
 
 ```
 dolphin droplet list --force-update
@@ -190,7 +190,14 @@ Check the [DigitalOCean API documentation](https://developers.digitalocean.com/d
 You can obtain the ID of a Droplet by running `droplet list` to list all your droplets.
 
 ```
-dolphin droplet destroy DROPLET_ID
+dolphin droplet destroy id=DROPLET_ID
+```
+
+
+You can destroy multiple droplets by providing a list of IDs separated by commas:
+
+```
+dolphin droplet destroy id=DROPLET_ID,DROPLET2_ID,DROPLET3_ID
 ```
 
 ## Checking for Information: `dolphin fetch`
