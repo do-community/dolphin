@@ -16,7 +16,7 @@
     "ext-json": "*"
   },
   "scripts": {
-    "post-update-cmd": [
+    "post-install-cmd": [
       "@php -r \"file_exists('config.php') || copy('config_sample.php', 'config.php');\""
     ]
   }
