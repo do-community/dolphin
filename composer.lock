@@ -4,21 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a837d012a53b0ea99eda38212dff9d30",
+    "content-hash": "79f87ed24fa908d10875b8851dc80299",
     "packages": [
         {
             "name": "minicli/minicli",
-            "version": "1.0.4",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/minicli/minicli.git",
-                "reference": "5e5d35519d131a9eeef0b6d7d41b4127443c8a64"
+                "reference": "a38713ad66be3de92e305fbfd49b36699ee749d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/minicli/minicli/zipball/5e5d35519d131a9eeef0b6d7d41b4127443c8a64",
-                "reference": "5e5d35519d131a9eeef0b6d7d41b4127443c8a64",
+                "url": "https://api.github.com/repos/minicli/minicli/zipball/a38713ad66be3de92e305fbfd49b36699ee749d6",
+                "reference": "a38713ad66be3de92e305fbfd49b36699ee749d6",
                 "shasum": ""
+            },
+            "require": {
+                "ext-readline": "*"
             },
             "type": "library",
             "autoload": {
@@ -30,13 +33,13 @@
             "license": [
                 "MIT"
             ],
-            "description": "Dependency-free CLI AppKit",
+            "description": "Mini CLI-only Experimental PHP Framework",
             "homepage": "https://github.com/erikaheidi/minicli",
             "keywords": [
                 "cli",
                 "command-line"
             ],
-            "time": "2019-12-16T14:30:36+00:00"
+            "time": "2019-12-18T21:10:44+00:00"
         }
     ],
     "packages-dev": [],
@@ -45,6 +48,8 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "ext-json": "*"
+    },
     "platform-dev": []
 }
