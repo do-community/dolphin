@@ -29,23 +29,33 @@ class DeployerService implements ServiceInterface
         $this->config = $app->config->deployer;
     }
 
+    /**
+     * Sets the remote Ansible user.
+     * @param string $user
+     */
     public function setRemoteUser($user)
     {
         $this->config['ansible_user'] = $user;
     }
 
+    /**
+     * @return string
+     */
     public function getInventory()
     {
         return isset($this->config['ansible_inventory']) ? $this->config['ansible_inventory'] : self::$DEFAULT_INVENTORY;
     }
 
+    /**
+     * @return string
+     */
     public function getPlaybooksPath()
     {
         return isset($this->config['playbooks_path']) ? $this->config['playbooks_path'] : self::$DEFAULT_PATH;
     }
 
     /**
-     * Runs a Playbook / Deploy Script
+     * Runs a Playbook
      * @param string $playbook
      * @param string $target
      */
@@ -63,7 +73,7 @@ class DeployerService implements ServiceInterface
      */
     public function ping($target)
     {
-        AnsibleProvider::ping($target, $this->getInventory());
+        AnsibleProvider::ping($target, $this->getInventory(), $this->config);
     }
 
     /**
