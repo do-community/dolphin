@@ -2,7 +2,7 @@
 
 namespace App\Command\Droplet;
 
-use App\DigitalOceanService as DigitalOcean;
+use App\Service\DigitalOceanService as DigitalOcean;
 use App\Exception\APIException;
 use Minicli\Command\CommandController;
 

@@ -49,6 +49,17 @@ return [
 
         # Default server group to use when generating Ansible inventory
         'default_server_group' => 'servers',
-    ]
+    ],
+
+    //////////////////////////////////
+    // Deployer Configuration
+    //////////////////////////////////
+    'deployer' => [
+
+        # Where to look for playbooks
+        'playbooks_path' => __DIR__ . '/playbooks',
+        'ansible_user'   => 'sammy',
+        'ansible_inventory' => __DIR__ . '/hosts.php',
+    ],
 
 ];

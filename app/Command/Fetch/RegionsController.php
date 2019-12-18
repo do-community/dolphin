@@ -2,8 +2,8 @@
 
 namespace App\Command\Fetch;
 
-use App\APIObject;
-use App\DigitalOceanService;
+use App\Model\APIObject;
+use App\Service\DigitalOceanService;
 use Minicli\Command\CommandController;
 
 class RegionsController extends CommandController

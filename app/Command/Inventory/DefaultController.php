@@ -2,8 +2,8 @@
 
 namespace App\Command\Inventory;
 
-use App\APIObject;
-use App\DigitalOceanService;
+use App\Model\APIObject;
+use App\Service\DigitalOceanService;
 use App\Model\Ansible\Group;
 use App\Model\Ansible\Host;
 use App\Model\Ansible\Inventory;

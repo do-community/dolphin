@@ -12,7 +12,8 @@
     }
   },
   "require": {
-    "minicli/minicli": "^1.0"
+    "minicli/minicli": "^1.0",
+    "ext-json": "*"
   },
   "scripts": {
     "post-update-cmd": [

@@ -8,8 +8,9 @@ if (php_sapi_name() !== 'cli') {
 require __DIR__ . '/vendor/autoload.php';
 
 use Minicli\App;
-use App\DigitalOceanService as DigitalOcean;
 use Minicli\Util\FileCache;
+use App\Service\DeployerService;
+use App\Service\DigitalOceanService;
 
 $app = new App(require __DIR__ . '/config.php');
 $cache = new FileCache(__DIR__ . '/var/cache');
@@ -36,5 +37,7 @@ EOD;
 
 $app->setSignature($signature);
 
-$app->addService('digitalocean', new DigitalOcean($cache));
+$app->addService('digitalocean', new DigitalOceanService($cache));
+$app->addService('deployer', new DeployerService());
+
 $app->runCommand($argv);

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Service;
 
 use App\Exception\APIException;
 use App\Exception\MissingArgumentException;

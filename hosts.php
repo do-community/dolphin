@@ -8,11 +8,11 @@ if (php_sapi_name() !== 'cli') {
 require __DIR__ . '/vendor/autoload.php';
 
 use Minicli\App;
-use App\DigitalOceanService as DigitalOcean;
+use App\Service\DigitalOceanService;
 use Minicli\Util\FileCache;
 
 $app = new App(require __DIR__ . '/config.php');
 $cache = new FileCache(__DIR__ . '/var/cache');
 
-$app->addService('digitalocean', new DigitalOcean($cache));
+$app->addService('digitalocean', new DigitalOceanService($cache));
 $app->runCommand([ 'dolphin', 'inventory', 'json' ]);

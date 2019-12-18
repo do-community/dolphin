@@ -2,10 +2,10 @@
 
 namespace App\Command\Droplet;
 
-use App\APIObject;
-use App\DigitalOceanService;
+use App\Model\APIObject;
+use App\Service\DigitalOceanService;
 use App\Exception\APIException;
-use App\RandomNameProvider;
+use App\Provider\RandomNameProvider;
 use Minicli\Command\CommandController;
 
 class CreateController extends CommandController

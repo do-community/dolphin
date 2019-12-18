@@ -2,8 +2,8 @@
 
 namespace App\Command\Droplet;
 
-use App\APIObject;
-use App\DigitalOceanService as DigitalOcean;
+use App\Model\APIObject;
+use App\Service\DigitalOceanService as DigitalOcean;
 use Minicli\Command\CommandController;
 
 class ListController extends CommandController
