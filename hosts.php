@@ -15,4 +15,4 @@ $app = new App(require __DIR__ . '/config.php');
 $cache = new FileCache(__DIR__ . '/var/cache');
 
 $app->addService('digitalocean', new DigitalOceanService($cache));
-$app->runCommand([ 'dolphin', 'inventory', 'json' ]);
+$app->runCommand([ 'dolphin', 'inventory', 'json', '--force-update' ]);

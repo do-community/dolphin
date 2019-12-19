@@ -16,7 +16,9 @@ class JsonController extends CommandController
         /** @var DigitalOceanService $digitalocean */
         $digitalocean = $this->getApp()->digitalocean;
 
-        $droplets = $digitalocean->getDroplets();
+        $force_update = $this->hasFlag('--force-update') ? 1 : 0;
+
+        $droplets = $digitalocean->getDroplets($force_update);
 
         if ($droplets === null) {
             $this->getPrinter()->error("No Droplets found.");
