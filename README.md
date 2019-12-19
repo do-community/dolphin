@@ -2,7 +2,9 @@
 
 # Dolphin
 
-Dolphin is a PHP-based command line tool for managing DigitalOcean servers. It includes a `playbooks` submodule that pulls from our [community playbooks](https://github.com/do-community/ansible-playbooks) repository, and a handy dynamic Ansible inventory script that you can use to run playbooks on new DO servers.
+Dolphin is a PHP-based command line tool for managing DigitalOcean servers. The `deployer` command uses Ansible as underlying mechanism for running automation tasks on Droplets.
+
+_This tool is experimental, use at your own risk._
 
 ## Requirements
 
@@ -10,10 +12,10 @@ Dolphin is a PHP-based command line tool for managing DigitalOcean servers. It i
 - Composer
 - Curl
 - Valid DigitalOcean API Key (R+W)
+- Ansible (required by `deployer`)
 
 ## Installation
 
-### Via Git
 First, clone this repository with:
 
 ```sh
@@ -33,15 +35,9 @@ Run `composer install` to install Dolphin's only dependency ([minicli](https://g
 composer install
 ```
 
-To fetch the playbooks submodule contents (which is optional), you should run:
-
-```sh
-git submodule update --init --recursive
-```
-
 ## Usage
 
-A `config.php` file is created upon installation with Composer. Edit the contents of this file and adjust the values accordingly:
+A `config.php` file is created upon installation with Composer. Edit the contents of this file and adjust the values accordingly. You need to provide a valid R+W DigitalOcean `api_token` value:
 
 ```php
 <?php
@@ -95,7 +91,18 @@ return [
 
         # Default server group to use when generating Ansible inventory
         'default_server_group' => 'servers',
-    ]
+    ],
+
+    //////////////////////////////////
+    // Deployer Configuration
+    //////////////////////////////////
+    'deployer' => [
+
+        # Where to look for playbooks
+        'playbooks_path' => __DIR__ . '/var/playbooks',
+        'ansible_user'   => 'sammy',
+        'ansible_inventory' => __DIR__ . '/hosts.php',
+    ],
 
 ];
 ```
@@ -113,7 +120,7 @@ For an overall look of commands and sub-commands, run `./dolphin help`.
 If you'd like to use dolphin out of any directory in a global installation, you can do so by creating a symbolic link to the dolphin executable on `/usr/local/bin`. Please notice this will only work for your current user, who owns the `dolphin` directory.
 
 ```sh
-sudo ln -s /usr/local/bin/dolphin /home/erika/Projects/dolphin/dolphin
+sudo ln -s /usr/local/bin/dolphin /path/to/dolphin
 ```
 
 ## Droplet Commands: `dolphin droplet`
@@ -266,7 +273,58 @@ ID        NAME      FINGERPRINT
 23937789  heidislab e7:51:a3:7e:e1:11:1b:d1:69:8e:98:3d:45:5f:7f:14
 ```
 
-## Running Ansible Playbooks and Commands
+## Deployer
+
+The `deployer` commands use Ansible to execute automation scripts on your droplets. Playbooks are not included with Dolphin, 
+but you can use our [ansible-playbooks](https://github.com/do-community/ansible-playbooks) repository to get started and create your own playbooks. 
+
+To do so, clone that repository into the `var/playbooks` folder:
+
+```
+cd var/playbooks
+git clone https://github.com/do-community/ansible-playbooks.git community-playbooks
+```
+
+Then, adjust the `playbooks_path` setting inside your `config.php` file to point to the cloned repository folder:
+
+```
+'playbooks_path' => __DIR__ . '/var/playbooks/community-playbooks',
+```
+
+Run the `list` command to see the available playbooks:
+
+```
+dolphin deployer list
+```
+
+```
+Playbooks Currently Available:
+
+NAME                          DESCRIPTION                   
+apache_ubuntu1804             apache for ubuntu1804         
+docker_ubuntu1804             docker for ubuntu1804         
+lamp_ubuntu1804               lamp for ubuntu1804           
+lemp_ubuntu1804               lemp for ubuntu1804           
+setup_ubuntu1804              setup for ubuntu1804          
+wordpress-lamp_ubuntu1804     wordpress-lamp for ubuntu1804 
+
+```
+
+To run a playbook on a droplet:
+
+```
+dolphin deployer run [playbook] on [target]
+```
+
+## Example For Deploying a new Wordpress on LAMP
+
+1. Create a new server with `dolphin droplet create`. Copy the server name.
+2. Run the Initial Server Setup as root: `dolphin deployer run setup_ubuntu1804 server-name user=root`
+3. Run the Wordpress on LAMP playbook: `dolphin deployer run wordpress-lamp_ubuntu1804 server-name` 
+
+Run `dolphin droplet list` to obtain the server IP. Access it from your browser and you should see the WP setup page.
+
+## Using the Dynamic Inventory with Ansible
 
 The included `hosts.php` script works as a dynamic inventory script that can be used directly with Ansible commands.
 

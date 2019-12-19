@@ -57,7 +57,7 @@ return [
     'deployer' => [
 
         # Where to look for playbooks
-        'playbooks_path' => __DIR__ . '/playbooks',
+        'playbooks_path' => __DIR__ . '/var/playbooks',
         'ansible_user'   => 'sammy',
         'ansible_inventory' => __DIR__ . '/hosts.php',
     ],
