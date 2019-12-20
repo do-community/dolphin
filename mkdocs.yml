@@ -1,0 +1,11 @@
+site_name: Dolphin
+theme:
+  name: readthedocs
+  highlightjs: true
+nav:
+  - 'index.md'
+  - 'getting_started.md'
+  - 'managing_droplets.md'
+  - 'fetching_info.md'
+  - 'deployer.md'
+  - 'dynamic_inventory.md'
