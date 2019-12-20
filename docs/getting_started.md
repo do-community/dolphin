@@ -124,20 +124,8 @@ Dolphin follows a `command subcommand` structure like this:
 ./dolphin [command] [sub-command] [params]
 ```
 
-For an overall look of all available commands and subcommands, run `./dolphin help`.
+For an overall look of all available commands and subcommands, run `./dolphin help` and check the other documentation sections.
 
-
-## Using the Dynamic Inventory with Ansible
-
-The included `hosts.php` script works as a dynamic inventory script that can be used directly with Ansible commands.
-
-```
-ansible all -m ping -i hosts.php -u root
-```
-
-```
-ansible-playbook -l server-name -i hosts.php playbooks/setup_ubuntu1804/playbook.yml -u root
-```
 
 Please check the [community playbooks](https://github.com/do-community/ansible-playbooks) repository for more details and links to guides that explain how to use the playbooks included in the `playbooks` submodule.
 ## Tips & Tricks
