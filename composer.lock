@@ -4,42 +4,121 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "79f87ed24fa908d10875b8851dc80299",
+    "content-hash": "7fb8d02fcbdbd453606a19a67f00841b",
     "packages": [
         {
-            "name": "minicli/minicli",
-            "version": "1.0.6",
+            "name": "minicli/curly",
+            "version": "0.1.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/minicli/minicli.git",
-                "reference": "a38713ad66be3de92e305fbfd49b36699ee749d6"
+                "url": "https://github.com/minicli/curly.git",
+                "reference": "50c0e8813adf66f298b862a5150c0acc00f3f18e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/minicli/minicli/zipball/a38713ad66be3de92e305fbfd49b36699ee749d6",
-                "reference": "a38713ad66be3de92e305fbfd49b36699ee749d6",
+                "url": "https://api.github.com/repos/minicli/curly/zipball/50c0e8813adf66f298b862a5150c0acc00f3f18e",
+                "reference": "50c0e8813adf66f298b862a5150c0acc00f3f18e",
                 "shasum": ""
             },
             "require": {
-                "ext-readline": "*"
+                "ext-curl": "*"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Minicli\\": "lib/"
+                    "Minicli\\Curly\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "description": "Mini CLI-only Experimental PHP Framework",
+            "description": "Simple Curl Client",
             "homepage": "https://github.com/erikaheidi/minicli",
+            "keywords": [
+                "api",
+                "curl",
+                "wrapper"
+            ],
+            "time": "2020-02-24T10:33:43+00:00"
+        },
+        {
+            "name": "minicli/minicache",
+            "version": "0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/minicli/minicache.git",
+                "reference": "637c2ea48448b4ce68cf8815b7693b95e907d4de"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/minicli/minicache/zipball/637c2ea48448b4ce68cf8815b7693b95e907d4de",
+                "reference": "637c2ea48448b4ce68cf8815b7693b95e907d4de",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Minicli\\Minicache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A simple json file cache for minicli",
+            "homepage": "https://github.com/minicli/minicli",
+            "keywords": [
+                "cache",
+                "json",
+                "micro"
+            ],
+            "time": "2020-05-21T09:03:53+00:00"
+        },
+        {
+            "name": "minicli/minicli",
+            "version": "2.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/minicli/minicli.git",
+                "reference": "0518a532c35765246b8ccc7582111aa9a2866d04"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/minicli/minicli/zipball/0518a532c35765246b8ccc7582111aa9a2866d04",
+                "reference": "0518a532c35765246b8ccc7582111aa9a2866d04",
+                "shasum": ""
+            },
+            "require": {
+                "ext-readline": "*",
+                "php": ">=7.3"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "pestphp/pest": "^0.1.2",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Minicli\\": "src/",
+                    "Assets\\": "tests/Assets"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Experimental micro CLI framework for PHP",
+            "homepage": "https://github.com/minicli/minicli",
             "keywords": [
                 "cli",
                 "command-line"
             ],
-            "time": "2019-12-18T21:10:44+00:00"
+            "time": "2020-06-13T09:04:06+00:00"
         }
     ],
     "packages-dev": [],

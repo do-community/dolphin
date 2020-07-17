@@ -8,7 +8,7 @@ if (php_sapi_name() !== 'cli') {
 require __DIR__ . '/vendor/autoload.php';
 
 use Minicli\App;
-use Minicli\Util\FileCache;
+use Minicli\Minicache\FileCache;
 use App\Service\DeployerService;
 use App\Service\DigitalOceanService;
 

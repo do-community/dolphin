@@ -7,8 +7,8 @@ use App\Exception\MissingArgumentException;
 use App\Exception\MissingConfigException;
 use Minicli\App;
 use Minicli\ServiceInterface;
-use Minicli\Util\CurlClient;
-use Minicli\Util\FileCache;
+use Minicli\Curly\Client as CurlClient;
+use Minicli\Minicache\FileCache;
 
 class DigitalOceanService implements ServiceInterface
 {
