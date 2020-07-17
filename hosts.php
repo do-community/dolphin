@@ -9,7 +9,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 use Minicli\App;
 use App\Service\DigitalOceanService;
-use Minicli\Util\FileCache;
+use Minicli\Minicache\FileCache;
 
 $app = new App(require __DIR__ . '/config.php');
 $cache = new FileCache(__DIR__ . '/var/cache');
