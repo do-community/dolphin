@@ -1,3 +1,6 @@
+## This Project is Deprecated.
+*We've set the repository as read-only for learning purposes, but there won't be any new updates.*
+
 ![Dolphin screenshot](https://heidislab.ams3.cdn.digitaloceanspaces.com/dolphin/screenshot.png)
 
 # Dolphin
